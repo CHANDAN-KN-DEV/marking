@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BizFit — Business Digitization & Technology Fit Assessment</title>
+  <meta name="description" content="Professional workflow analysis and digital tool selection for small businesses and distributors.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Three.js Library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Interactive 3D Three.js Background Canvas -->
+  <div id="three-canvas-container" class="three-background" aria-hidden="true"></div>
+
+  <!-- Professional Top Navigation -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="logo-area" id="btn-logo-home" role="button" tabindex="0">
+        <div class="logo-mark">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="brand-title">BizFit <span class="version-tag">PORTAL</span></span>
+          <span class="brand-subtitle">Business Digitization & Operational Fit</span>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <div class="consulting-badge">
+          <span class="status-indicator"></span> Operational Advisory Framework
+        </div>
+        <button id="theme-toggle" class="icon-btn" title="Toggle Light/Dark Display" aria-label="Toggle theme">
+          <span class="theme-icon">🌙</span>
+        </button>
+        <button id="btn-restart" class="action-btn secondary-btn" style="display: none;">
+          ↺ Change Track
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main View Container -->
+  <main class="main-content">
+    
+    <!-- ==============================================
+         VIEW 1: DOMAIN / TRACK SELECTION
+         ============================================== -->
+    <section id="view-module-select" class="view-section active">
+      <div class="hero-section">
+        <div class="framework-tag">
+          <span>Enterprise Methodology · Workflow-First Technology Adoption</span>
+        </div>
+        <h1 class="hero-title">
+          Evaluate Your Operations.<br>
+          <span class="hero-gradient">Identify Measurable Technology Fit.</span>
+        </h1>
+        <p class="hero-desc">
+          Small businesses struggle when selecting digital tools without analyzing their daily operational workflow.
+          Describe your day-to-day work across your chosen operational domain, evaluate friction points, and receive a rigorous 
+          <strong>Opportunity Detection Score</strong> and <strong>Technology Fit Benchmark</strong>.
+        </p>
+      </div>
+
+      <div class="track-selection-container">
+        <div class="section-label-row">
+          <span class="step-num">Step 01</span>
+          <h2 class="section-heading">Select One Operational Track to Audit</h2>
+        </div>
+
+        <div class="tracks-grid" id="tracks-container">
+          
+          <!-- Track 1: Marketing Marks -->
+          <div class="track-card" data-module="marketing" id="card-marketing">
+            <div class="card-accent-line"></div>
+            <div class="track-card-header">
+              <div class="track-icon-wrapper" style="background: rgba(37, 99, 235, 0.12); color: #3b82f6;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M23 6l-9.5 9.5-5-5L1 18"/>
+                  <path d="M17 6h6v6"/>
+                </svg>
+              </div>
+              <span class="track-status-pill primary-pill">Verified Case Study</span>
+            </div>
+            <h3 class="track-title">Marketing Marks</h3>
+            <p class="track-subtitle">Customer Acquisition & Enquiry Management</p>
+            <p class="track-description">
+              Examine walk-in traffic, WhatsApp Business enquiries, follow-up cadence, and client outreach beyond your immediate trade network.
+            </p>
+            <div class="track-specs">
+              <div class="spec-row">
+                <span class="spec-label">Case Subject:</span>
+                <span class="spec-value">N Stone Chemicals</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Audited Scope:</span>
+                <span class="spec-value">10 Operational Questions</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Benchmarking:</span>
+                <span class="spec-value">IndiaMART · TradeIndia · Google Ads</span>
+              </div>
+            </div>
+            <div class="track-actions">
+              <button class="track-btn primary-btn select-track-btn" data-module="marketing">
+                Begin Marketing Audit →
+              </button>
+              <button class="track-btn secondary-btn demo-track-btn" data-module="marketing" data-demo="true">
+                📋 Load "N Stone Chemicals" Study
+              </button>
+            </div>
+          </div>
+
+          <!-- Track 2: Order Management -->
+          <div class="track-card" data-module="order_management" id="card-orders">
+            <div class="card-accent-line green-accent"></div>
+            <div class="track-card-header">
+              <div class="track-icon-wrapper" style="background: rgba(16, 185, 129, 0.12); color: #10b981;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+                  <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                  <line x1="12" y1="22.08" x2="12" y2="12"/>
+                </svg>
+              </div>
+              <span class="track-status-pill">Operations & Inventory</span>
+            </div>
+            <h3 class="track-title">Order Management</h3>
+            <p class="track-subtitle">Quotation-to-Cash & Godown Stock</p>
+            <p class="track-description">
+              Audit order intake channels, physical godown stock checks, handwritten paper challans, and customer credit ledger recovery.
+            </p>
+            <div class="track-specs">
+              <div class="spec-row">
+                <span class="spec-label">Case Subject:</span>
+                <span class="spec-value">Building Material Wholesale</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Audited Scope:</span>
+                <span class="spec-value">10 Operational Questions</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Benchmarking:</span>
+                <span class="spec-value">Vyapar · Khatabook · Zoho Inventory</span>
+              </div>
+            </div>
+            <div class="track-actions">
+              <button class="track-btn primary-btn select-track-btn" data-module="order_management">
+                Begin Order Audit →
+              </button>
+              <button class="track-btn secondary-btn demo-track-btn" data-module="order_management" data-demo="true">
+                📋 Load Wholesale Case Study
+              </button>
+            </div>
+          </div>
+
+          <!-- Track 3: Employee Management -->
+          <div class="track-card" data-module="employee_management" id="card-employee">
+            <div class="card-accent-line purple-accent"></div>
+            <div class="track-card-header">
+              <div class="track-icon-wrapper" style="background: rgba(139, 92, 246, 0.12); color: #8b5cf6;">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+                  <circle cx="9" cy="7" r="4"/>
+                  <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+                  <path d="M16 3.13a4 4 0 010 7.75"/>
+                </svg>
+              </div>
+              <span class="track-status-pill">Workforce & Payroll</span>
+            </div>
+            <h3 class="track-title">Employee Management</h3>
+            <p class="track-subtitle">Attendance, Salary Advances & Payroll</p>
+            <p class="track-description">
+              Assess manual paper muster-rolls, unverified tardiness, informal cash advance disputes, and multi-day month-end salary calculations.
+            </p>
+            <div class="track-specs">
+              <div class="spec-row">
+                <span class="spec-label">Case Subject:</span>
+                <span class="spec-value">Retail & Field Operations</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Audited Scope:</span>
+                <span class="spec-value">10 Operational Questions</span>
+              </div>
+              <div class="spec-row">
+                <span class="spec-label">Benchmarking:</span>
+                <span class="spec-value">PagarBook · SalaryBox · Zoho People</span>
+              </div>
+            </div>
+            <div class="track-actions">
+              <button class="track-btn primary-btn select-track-btn" data-module="employee_management">
+                Begin Employee Audit →
+              </button>
+              <button class="track-btn secondary-btn demo-track-btn" data-module="employee_management" data-demo="true">
+                📋 Load Retail Staff Case Study
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Academic & Design Thinking Information Bar -->
+        <div class="methodology-banner">
+          <div class="methodology-left">
+            <span class="methodology-pill">Standardised Rubric Methodology</span>
+            <h4>Step-by-Step Guided Diagnostic (Non-Spreadsheet Interaction)</h4>
+            <p>
+              Instead of an unstructured form or single-sheet spreadsheet, this portal guides the business owner through one focused operational aspect at a time.
+              It evaluates four standardized metrics: <strong>Frequency (F)</strong>, <strong>Time & Effort (T)</strong>, 
+              <strong>Business Impact (B)</strong>, and <strong>Digitalisation Gap (D)</strong>.
+            </p>
+          </div>
+          <div class="methodology-right">
+            <div class="formula-card">
+              <span class="formula-header">Opportunity Metric</span>
+              <div class="formula-equation">Score = (F + T + B + D) ÷ 4</div>
+              <span class="formula-footer">Each Criterion Rated 1 (Minimal) to 5 (Major Bottleneck)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         VIEW 2: STEP-BY-STEP QUESTIONNAIRE (CARD WIZARD)
+         ============================================== -->
+    <section id="view-questionnaire" class="view-section">
+      <div class="wizard-container">
+        
+        <!-- Step Navigation Bar -->
+        <div class="wizard-top-bar">
+          <button id="btn-back-to-modules" class="back-link-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M19 12H5M12 19l-7-7 7-7"/>
+            </svg>
+            Switch Audit Track
+          </button>
+          
+          <div class="module-indicator-badge" id="current-module-badge">
+            <span class="badge-icon">📈</span>
+            <span class="badge-label">Marketing Marks</span>
+          </div>
+
+          <div class="progress-step-counter">
+            <span class="counter-label">Diagnostic Progress:</span>
+            <strong id="q-current-number">1</strong> / <span id="q-total-number">10</span>
+          </div>
+        </div>
+
+        <!-- Smooth Progress Bar -->
+        <div class="wizard-progress-bar">
+          <div class="wizard-progress-fill" id="progress-bar-fill"></div>
+        </div>
+
+        <!-- Stepper Dots -->
+        <div class="stepper-dots-row" id="dot-stepper-container"></div>
+
+        <!-- Main Question Card -->
+        <div class="question-card" id="active-question-card">
+          
+          <div class="question-card-header">
+            <div class="question-meta-row">
+              <span class="step-badge" id="q-category-tag">Question 01 of 10</span>
+              <button id="btn-quick-fill-sample" class="sample-fill-btn" title="Pre-fill with actual case study interview response">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+                Load Case Study Response (N Stone Chemicals)
+              </button>
+            </div>
+            
+            <h2 class="question-main-text" id="q-title-text">
+              Where do most of your new customers or enquiries come from?
+            </h2>
+            <p class="question-sub-hint" id="q-hint-text">
+              Identify your current acquisition channels and typical customer types.
+            </p>
+          </div>
+
+          <!-- Freeform Input Section -->
+          <div class="input-container">
+            <label for="q-input-text" class="input-field-label">Current Business Practice Description:</label>
+            <textarea 
+              id="q-input-text" 
+              class="enterprise-textarea" 
+              rows="4" 
+              placeholder="Detail your team's current method, channels used, and observed challenges..."
+              aria-label="Your Business Response"
+            ></textarea>
+
+            <!-- Quick Suggestions Tags -->
+            <div class="quick-tags-section">
+              <span class="quick-tags-label">Common Patterns (Click to append):</span>
+              <div class="quick-tags-flex" id="quick-tags-list"></div>
+            </div>
+          </div>
+
+          <!-- Opportunity Evaluation Sliders Matrix -->
+          <div class="evaluation-matrix-card">
+            <div class="eval-header-row">
+              <div>
+                <h4 class="eval-title">Opportunity Metric Calibration (1 - 5 Scale)</h4>
+                <p class="eval-subtitle">Rate how this specific challenge impacts your business operations.</p>
+              </div>
+              <div class="score-pill-container">
+                <span class="score-pill-label">Computed Opportunity Score:</span>
+                <span class="score-pill-val" id="live-question-score">4.25</span>
+              </div>
+            </div>
+
+            <div class="sliders-grid">
+              
+              <!-- Frequency -->
+              <div class="slider-field">
+                <div class="slider-info-row">
+                  <span class="field-name">Frequency (F)</span>
+                  <span class="field-val" id="val-f">5</span>
+                </div>
+                <input type="range" min="1" max="5" value="5" id="slider-f" class="metric-slider">
+                <span class="field-interpretation" id="desc-f">Constant / Daily challenge</span>
+              </div>
+
+              <!-- Time & Effort -->
+              <div class="slider-field">
+                <div class="slider-info-row">
+                  <span class="field-name">Time & Effort (T)</span>
+                  <span class="field-val" id="val-t">3</span>
+                </div>
+                <input type="range" min="1" max="5" value="3" id="slider-t" class="metric-slider">
+                <span class="field-interpretation" id="desc-t">Noticeable manual effort required</span>
+              </div>
+
+              <!-- Business Impact -->
+              <div class="slider-field">
+                <div class="slider-info-row">
+                  <span class="field-name">Business Impact (B)</span>
+                  <span class="field-val" id="val-b">5</span>
+                </div>
+                <input type="range" min="1" max="5" value="5" id="slider-b" class="metric-slider">
+                <span class="field-interpretation" id="desc-b">Major impact on revenue & acquisition</span>
+              </div>
+
+              <!-- Digitalisation Gap -->
+              <div class="slider-field">
+                <div class="slider-info-row">
+                  <span class="field-name">Digitalisation Gap (D)</span>
+                  <span class="field-val" id="val-d">4</span>
+                </div>
+                <input type="range" min="1" max="5" value="4" id="slider-d" class="metric-slider">
+                <span class="field-interpretation" id="desc-d">Substantial gap in digital tools</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Wizard Footer Controls -->
+          <div class="wizard-footer-controls">
+            <button id="btn-prev-question" class="action-btn secondary-btn" disabled>
+              ← Previous Question
+            </button>
+
+            <span class="shortcut-legend">Press <strong>Ctrl + Enter</strong> to proceed</span>
+
+            <button id="btn-next-question" class="action-btn primary-btn">
+              Next Question →
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         VIEW 3: RESULTS & DISCOVERY REPORT
+         ============================================== -->
+    <section id="view-results-report" class="view-section">
+      
+      <!-- Executive Summary Top Banner -->
+      <div class="executive-banner">
+        <div class="exec-top-row">
+          <div class="exec-status">
+            <span class="exec-dot"></span> Operational Diagnostic Completed
+          </div>
+          <div class="exec-button-group">
+            <button id="btn-print-report" class="action-btn secondary-btn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M6 9V2h12v7M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/>
+                <path d="M6 14h12v8H6z"/>
+              </svg>
+              Export Report (PDF / Print)
+            </button>
+            <button id="btn-retake-same" class="action-btn secondary-btn">
+              ↺ Recalibrate
+            </button>
+            <button id="btn-switch-track-report" class="action-btn primary-btn">
+              Select Another Track →
+            </button>
+          </div>
+        </div>
+
+        <div class="exec-title-row">
+          <span class="exec-track-badge" id="report-track-name">Marketing Marks — N Stone Chemicals</span>
+          <h1 class="exec-heading">Business Discovery & Technology Fit Report</h1>
+          <p class="exec-metadata" id="report-company-meta">
+            Construction materials retailer and distributor · 7 employees · ~150 customer contacts
+          </p>
+        </div>
+      </div>
+
+      <!-- Report Sections Stack -->
+      <div class="report-stack">
+
+        <!-- 1. Primary Opportunity Hero -->
+        <div class="report-panel primary-opportunity-panel">
+          <div class="panel-badge-row">
+            <span class="hero-kicker">PRIMARY IMPROVEMENT OPPORTUNITY</span>
+            <div class="hero-score-badge">
+              <span class="hero-score-label">Illustrative Score:</span>
+              <strong class="hero-score-number" id="rep-primary-score">4.25</strong>
+              <span class="hero-score-max">/ 5.0</span>
+            </div>
+          </div>
+
+          <h2 class="hero-opp-title" id="rep-primary-title">Consistent Customer Acquisition</h2>
+          <p class="hero-opp-summary" id="rep-primary-summary">
+            Create an additional, manageable channel for attracting new business enquiries without requiring complicated new workflows or additional staffing.
+          </p>
+
+          <div class="primary-reasons-box">
+            <h4 class="reasons-heading">Diagnostic Findings Supporting This Priority:</h4>
+            <ul class="reasons-list" id="rep-primary-reasons">
+              <li>The owner explicitly identified finding new customers consistently as the primary operational challenge.</li>
+              <li>Existing construction relationships provide orders, but reaching new buyers outside those networks remains difficult.</li>
+              <li>Marketing activities are currently sporadic (restricted to seasonal or festival greetings).</li>
+              <li>The business targets verified contractors, builders, architects, and tile installers.</li>
+            </ul>
+          </div>
+
+          <div class="executive-interpretation">
+            <strong>Strategic Interpretation:</strong> The central obstacle is not a complete absence of digital capabilities; it is the absence of a systematic, manageable channel to acquire business buyers beyond existing relationships.
+          </div>
+        </div>
+
+        <!-- 2. Standardised Opportunity Matrix -->
+        <div class="report-panel">
+          <div class="panel-header">
+            <div>
+              <h3 class="panel-title">Opportunity Assessment Results Matrix</h3>
+              <p class="panel-subtitle">Comparative 1-to-5 evaluation across all identified operational friction points</p>
+            </div>
+            <div class="rubric-formula-badge">
+              Score = (F + T + B + D) ÷ 4
+            </div>
+          </div>
+
+          <div class="table-container">
+            <table class="corporate-table" id="table-opp-results">
+              <thead>
+                <tr>
+                  <th>Identified Operational Bottleneck</th>
+                  <th class="th-num" title="Frequency (1 to 5)">F</th>
+                  <th class="th-num" title="Time & Effort (1 to 5)">T</th>
+                  <th class="th-num" title="Business Impact (1 to 5)">B</th>
+                  <th class="th-num" title="Digitalisation Gap (1 to 5)">D</th>
+                  <th class="th-num">Average Score</th>
+                  <th>Priority Status</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-problems"></tbody>
+            </table>
+          </div>
+
+          <!-- Rubric Scale Reference -->
+          <div class="rubric-scale-row">
+            <div class="rubric-scale-step"><span class="scale-num">1</span> Very Low Difficulty</div>
+            <div class="rubric-scale-step"><span class="scale-num">2</span> Low / Occasional</div>
+            <div class="rubric-scale-step"><span class="scale-num">3</span> Moderate / Noticeable</div>
+            <div class="rubric-scale-step"><span class="scale-num">4</span> High / Recurring</div>
+            <div class="rubric-scale-step"><span class="scale-num">5</span> Very High / Major Challenge</div>
+          </div>
+        </div>
+
+        <!-- 3. Technology Fit Engine -->
+        <div class="report-panel tech-fit-card">
+          <div class="panel-header">
+            <div>
+              <span class="panel-category-tag">Technology Fit Engine</span>
+              <h3 class="panel-title">Which Tool Best Fits Your Business?</h3>
+              <p class="panel-subtitle">Evaluating industry tools against four business-specific adoption criteria</p>
+            </div>
+            <div class="weighted-formula-pill">
+              <code>Weighted Score = (Reach × 40%) + (Ease × 25%) + (Workflow Fit × 20%) + (Staffing × 15%)</code>
+            </div>
+          </div>
+
+          <!-- Comparison Cards Grid -->
+          <div class="tools-grid" id="tools-cards-container"></div>
+
+          <!-- Comparison Table -->
+          <div class="table-container" style="margin-top: 1.5rem;">
+            <table class="corporate-table" id="table-tools-comparison">
+              <thead>
+                <tr>
+                  <th>Software Platform</th>
+                  <th class="th-num">Buyer Reach (40%)</th>
+                  <th class="th-num">Ease of Use (25%)</th>
+                  <th class="th-num">Workflow Fit (20%)</th>
+                  <th class="th-num">Staffing Fit (15%)</th>
+                  <th class="th-num">Weighted Score</th>
+                  <th>Assessment Recommendation</th>
+                </tr>
+              </thead>
+              <tbody id="tbody-tools"></tbody>
+            </table>
+          </div>
+
+          <div class="interpretation-callout">
+            <div class="callout-icon">💡</div>
+            <div>
+              <h5>How to Interpret These Results</h5>
+              <p id="rep-tools-interpretation">
+                IndiaMART ranks highest in this comparison because it provides significant business buyer reach with manageable administrative demands for the current 7-person team.
+                The ratings are structured evaluation estimates; final adoption should be validated through an initial trial.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Operational Workflow Evolution -->
+        <div class="report-panel">
+          <div class="panel-header">
+            <div>
+              <h3 class="panel-title">Operational Workflow Evolution</h3>
+              <p class="panel-subtitle">Current day-to-day operations compared against the proposed digital workflow</p>
+            </div>
+          </div>
+
+          <div class="workflow-comparison-container">
+            <div class="workflow-column workflow-current">
+              <div class="wf-col-header">
+                <span class="wf-badge current-badge">Current State</span>
+                <h4>Today — Existing Workflow</h4>
+              </div>
+              <div class="wf-steps-stack" id="workflow-today-list"></div>
+            </div>
+
+            <div class="workflow-column workflow-future">
+              <div class="wf-col-header">
+                <span class="wf-badge future-badge">Target State</span>
+                <h4>Proposed — With Recommended Tool</h4>
+              </div>
+              <div class="wf-steps-stack" id="workflow-proposed-list"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Cost & Value + Pilot Plan -->
+        <div class="report-panel">
+          <div class="panel-header">
+            <div>
+              <h3 class="panel-title">Cost, Value & 30-Day Pilot Evaluation Plan</h3>
+              <p class="panel-subtitle">Investment requirements and structured metrics to monitor pilot success</p>
+            </div>
+          </div>
+
+          <div class="pricing-options-grid" id="cost-options-container"></div>
+
+          <!-- Pilot Metrics -->
+          <div class="pilot-checklist-box">
+            <h4>Suggested 30-Day Pilot Observation Metrics</h4>
+            <p class="pilot-note">Track these operational metrics during an initial 30-day period before committing to paid visibility tiers.</p>
+            <div class="pilot-metrics-grid" id="pilot-metrics-list"></div>
+          </div>
+
+          <!-- Interactive Break-Even Calculator -->
+          <div class="break-even-calculator">
+            <div class="calc-header">
+              <h4>Interactive Pilot Break-Even Calculator</h4>
+              <span>Calculate how many converted orders are required to cover technology costs</span>
+            </div>
+            <div class="calc-grid">
+              <div class="calc-input-cell">
+                <label for="roi-avg-order">Average Order Value (₹):</label>
+                <input type="number" id="roi-avg-order" value="15000" min="500" step="500">
+              </div>
+              <div class="calc-input-cell">
+                <label for="roi-margin">Gross Margin %:</label>
+                <input type="number" id="roi-margin" value="20" min="5" max="90" step="1">
+              </div>
+              <div class="calc-input-cell">
+                <label for="roi-cost">Annual Software Cost (₹):</label>
+                <input type="number" id="roi-cost" value="41300" min="0" step="1000">
+              </div>
+            </div>
+            <div class="calc-output" id="roi-result-text"></div>
+          </div>
+        </div>
+
+        <!-- 6. Implementation Roadmap -->
+        <div class="report-panel">
+          <div class="panel-header">
+            <div>
+              <h3 class="panel-title">5-Step Implementation Action Plan</h3>
+              <p class="panel-subtitle">A phased, low-risk approach to adopting the recommended solution</p>
+            </div>
+          </div>
+
+          <div class="roadmap-steps-list" id="implementation-steps-container"></div>
+
+          <!-- Strategic Decisions -->
+          <div class="decision-section">
+            <h4 class="decision-heading">Recommended Strategic Path:</h4>
+            <div class="decision-cards-grid">
+              <div class="decision-box featured">
+                <span class="decision-tag">Recommended Path</span>
+                <h5>1. Explore Free / Basic Listing</h5>
+                <p>Register company profile, publish top 15 product catalogs, and assess enquiry relevancy for 30 days without financial risk.</p>
+                <button class="action-btn primary-btn small-btn" id="btn-open-indiamart">
+                  Launch Recommended Platform ↗
+                </button>
+              </div>
+              <div class="decision-box">
+                <span class="decision-tag">Alternative Option</span>
+                <h5>2. Review Secondary Platforms</h5>
+                <p>Compare niche alternatives if trade categories or local buyer density require specialized vertical marketplaces.</p>
+                <button class="action-btn secondary-btn small-btn" id="btn-explore-alt">
+                  Review Comparison Table ↑
+                </button>
+              </div>
+              <div class="decision-box">
+                <span class="decision-tag">Advisory Review</span>
+                <h5>3. Pilot Evaluation Checklist</h5>
+                <p>Appoint a responsible internal staff member and track lead conversion before authorizing expenditure.</p>
+                <button class="action-btn secondary-btn small-btn" id="btn-review-pilot">
+                  View Pilot Metrics ↑
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Notification Toast -->
+  <div id="toast" class="toast-message" role="status" aria-live="polite"></div>
+
+  <!-- JavaScript Module Entrypoint -->
+  <script type="module" src="app.js"></script>
+</body>
+</html>
